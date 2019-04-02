@@ -12,17 +12,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 
     <script type="text/babel">
+
        class Happy extends React.Component {
-         render() {
+         constructor (props){
+           super (props);
+           this.state = {
+           number: 2
+         }
+       }
+        render() {
            return (
              <div>
-               <h1>Happy to Meet You!</h1>
+               <h1>Happy to Meet You {this.props.name}!</h1>
+               <h2>This is week: {this.state.number}</h2>
              </div>
            );
          }
        }
        ReactDOM.render(
-         <Happy />, document.getElementById('app')
+         <Happy name="Bloc Student"/>, document.getElementById('app')
        );
     </script>
   </body>
